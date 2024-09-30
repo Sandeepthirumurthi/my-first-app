@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Birla House",
+    "type": "House",
+    "price": 12000
+  },
+  {
+    "id": 2,
+    "name": "Birla House",
+    "type": "House",
+    "price": 12000
+  },
+  {
+    "id": 3,
+    "name": "Birla House",
+    "type": "House",
+    "price": 12000
+  },
+  {
+    "id": 4,
+    "name": "Birla House",
+    "type": "House",
+    "price": 12000
+  },
+  {
+    "id": 5,
+    "name": "Birla House",
+    "type": "House",
+    "price": 12000
+  },
+  {
+    "id": 6,
+    "name": "Birla House",
+    "type": "House",
+    "price": 12000
+  }
+]
