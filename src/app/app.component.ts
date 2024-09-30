@@ -5,6 +5,7 @@ import { PropertyListComponent } from './property/property-list/property-list.co
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HousingService } from './services/housing.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { HousingService } from './services/housing.service';
     PropertyListComponent,
     NavBarComponent,
     HttpClientModule,
+    FormsModule
   ],
   providers: [HousingService],
   templateUrl: './app.component.html',

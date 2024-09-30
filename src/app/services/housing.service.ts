@@ -10,12 +10,12 @@ import { Observable } from 'rxjs';
 export class HousingService {
   constructor(private http: HttpClient) {}
 
-  getAllProperites(): Observable<IProperty[]> {
+  getAllProperites(sellRent: number): Observable<IProperty[]> {
     return this.http.get('data/properties.json').pipe(
       map(data => {
         const propertiesArray: IProperty[] = [];
         for(const id in data){
-          if(data.hasOwnProperty(id)){
+          if(data.hasOwnProperty(id) && data[id as keyof object]['sellRent'] === sellRent){
             propertiesArray.push(data[id as keyof object]);
           }
         }

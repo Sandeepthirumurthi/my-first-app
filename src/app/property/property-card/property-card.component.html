@@ -1,6 +1,11 @@
 <div class="card">
   <div class="card-img-wrapper">
-    <img
+    <img *ngIf = "Input_Property.image"
+      class="card-img-top"
+      [src]="'assets/images/' + Input_Property.image + '.png'"
+      alt="House Image"
+    />
+    <img *ngIf = "!Input_Property.image"
       class="card-img-top"
       src="assets/images/house_default.png"
       alt="House Image"
