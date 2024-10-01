@@ -6,7 +6,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HousingService } from './services/housing.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UserServiceService } from './services/user.service';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +20,7 @@ import { UserServiceService } from './services/user.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [HousingService, UserServiceService],
+  providers: [HousingService, UserService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
