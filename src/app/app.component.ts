@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HousingService } from './services/housing.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './services/user.service';
+import { AlertifyService } from './services/alertify.service';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,7 @@ import { UserService } from './services/user.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [HousingService, UserService],
+  providers: [HousingService, UserService, AlertifyService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
