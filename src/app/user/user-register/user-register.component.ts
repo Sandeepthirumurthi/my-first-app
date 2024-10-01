@@ -27,22 +27,6 @@ export class UserRegisterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.registerationForm = new FormGroup(
-    //   {
-    //     userName: new FormControl(null, Validators.required),
-    //     email: new FormControl(null, Validators.email),
-    //     password: new FormControl(null, [
-    //       Validators.required,
-    //       Validators.minLength(8),
-    //     ]),
-    //     confirmPassword: new FormControl(null, Validators.required),
-    //     mobile: new FormControl(null, [
-    //       Validators.required,
-    //       Validators.maxLength(10),
-    //     ]),
-    //   },
-    //   { validators: this.passwordMatchingValidator }
-    // );
     this.createReisterationForm();
   }
 
