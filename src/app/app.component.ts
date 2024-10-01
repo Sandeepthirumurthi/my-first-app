@@ -8,6 +8,7 @@ import { HousingService } from './services/housing.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './services/user.service';
 import { AlertifyService } from './services/alertify.service';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -19,9 +20,9 @@ import { AlertifyService } from './services/alertify.service';
     NavBarComponent,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [HousingService, UserService, AlertifyService],
+  providers: [HousingService, UserService, AlertifyService, AuthService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

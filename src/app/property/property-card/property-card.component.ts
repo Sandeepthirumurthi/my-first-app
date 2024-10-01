@@ -1,13 +1,13 @@
-import { Component, Input, input } from '@angular/core';
-import { PropertyListComponent } from '../property-list/property-list.component';
+import { Component, Input } from '@angular/core';
 import { IProperty } from '../property-list/IProperty.interface';
-import { CommonModule } from '@angular/common';
+
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-property-card',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './property-card.component.html',
   styleUrl: './property-card.component.css',
 })
