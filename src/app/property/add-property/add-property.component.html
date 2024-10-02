@@ -5,13 +5,13 @@
         <h3>List your Property</h3>
       </div>
       <div class="card-body">
-        <form (ngSubmit)="onSubmit(Form)" #Form="ngForm">
+        <form (ngSubmit)="onSubmit()" #Form="ngForm">
           <div class="tab-panel">
             <tabset class="member-tabset" #formTabs>
-              <tab heading="Basic Info">
+              <tab heading="Basic Info" ngModelGroup="BasicInfo" #BasicInfo="ngModelGroup">
                 <div class="form-group col-12">
                   <p class="mt-2">I want to</p>
-                  <div class="btn-group" btnRadioGroup>
+                  <div class="btn-group" btnRadioGroup ngModel name="SellRent" required>
                     <label
                       class="btn btn-outline-primary"
                       btnRadio="1"
@@ -115,6 +115,7 @@
                     type="button"
                     class="btn btn-primary btn-block"
                     (click)="selectTab(1)"
+                    [disabled]="!BasicInfo.valid"
                   >
                     Next
                   </button>
@@ -336,7 +337,10 @@
       <h3>Your property preview</h3>
     </div>
     <div class="shadow-lg p-3 bg-white">
-      <app-property-card [Input_Property]="propertyView" [hideIcons]="true"></app-property-card>
+      <app-property-card
+        [Input_Property]="propertyView"
+        [hideIcons]="true"
+      ></app-property-card>
     </div>
   </div>
 </div>

@@ -1,6 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  NgForm,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { TabsModule, TabsetComponent } from 'ngx-bootstrap/tabs';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
@@ -16,6 +23,7 @@ import { IProperty } from '../property-list/IProperty.interface';
     TabsModule,
     ButtonsModule,
     PropertyCardComponent,
+    ReactiveFormsModule,
   ],
   templateUrl: './add-property.component.html',
   styleUrl: './add-property.component.css',
@@ -24,6 +32,8 @@ export class AddPropertyComponent implements OnInit {
   @ViewChild('Form') addPropertyForm!: NgForm;
 
   @ViewChild('formTabs', { static: true }) formTabs!: TabsetComponent;
+
+  // addPropertyForm!: FormGroup;
 
   // will come from master
   propertyTypes: Array<string> = ['House', 'Apartment', 'Duplex'];
@@ -39,18 +49,32 @@ export class AddPropertyComponent implements OnInit {
     BHK: 0,
     builtArea: 0,
     city: '',
-    RTM: 0
+    RTM: 0,
   };
 
-  constructor(private route: Router) {}
+  constructor(private route: Router, private fd: FormBuilder) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.createAddPropertyForm();
+  }
+
+  // createAddPropertyForm() {
+  //   this.addPropertyForm = this.fd.group({
+  //     sellRent: [null, Validators.required],
+  //     pType: [null, Validators.required],
+  //     name: [null, Validators.required],
+  //     price: [null, Validators.required],
+  //     builtArea: [null, Validators.required],
+  //   });
+  // }
 
   onBack() {
     this.route.navigate(['/']);
   }
 
-  onSubmit(Form: NgForm) {
+  onSubmit() {
+    console.log('Congrats, form submitted');
+    console.log('SellRent=' + this.addPropertyForm.value.BasicInfo.SellRent);
     console.log(this.addPropertyForm);
   }
 
