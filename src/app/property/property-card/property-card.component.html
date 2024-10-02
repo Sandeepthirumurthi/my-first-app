@@ -1,16 +1,18 @@
 <div class="card">
   <div class="card-img-wrapper">
-    <img *ngIf = "Input_Property.image"
+    <img
+      *ngIf="Input_Property.image"
       class="card-img-top"
       [src]="'assets/images/' + Input_Property.image + '.png'"
       alt="House Image"
     />
-    <img *ngIf = "!Input_Property.image"
+    <img
+      *ngIf="!Input_Property.image"
       class="card-img-top"
       src="assets/images/house_default.png"
       alt="House Image"
     />
-    <ul class="list-inline text-center member-icons animate">
+    <ul *ngIf="!hideIcons" class="list-inline text-center member-icons animate">
       <li class="list-inline-item">
         <button
           class="btn btn-primary"
@@ -27,9 +29,33 @@
       </li>
     </ul>
   </div>
-  <div class="card-body p-2">
+  <!-- <div class="card-body p-2">
     <h1>{{ Input_Property.name }}</h1>
-    <h2>{{ Input_Property.type }}</h2>
+    <h2>{{ Input_Property.pType }}</h2>
     <h3>{{ Input_Property.price }}</h3>
+  </div> -->
+  <div class="card-body p-2">
+    <div class="card-body p-1">
+      <h1 class="mb-0">
+        {{ Input_Property.BHK }} BHK {{ Input_Property.pType }}
+      </h1>
+
+      in {{ Input_Property.name }}
+      <span *ngIf="Input_Property.name">,</span>
+      {{ Input_Property.city }}
+
+      <h6 class="mt-2">
+        {{ Input_Property.fType }}
+        <span *ngIf="Input_Property.fType !== 'Unfurnished'">Furnished</span> |
+        Ready to Move
+      </h6>
+
+      <hr class="mt-0 mb-2" />
+
+      <h6 class="mb-0">
+        Price: <span class>{{ Input_Property.price }} USD.</span> | Area:
+        <span>{{ Input_Property.builtArea }} Sq Ft </span>
+      </h6>
+    </div>
   </div>
 </div>

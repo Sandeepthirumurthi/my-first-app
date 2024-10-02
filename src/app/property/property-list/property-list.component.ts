@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { PropertyCardComponent } from '../property-card/property-card.component';
 import { CommonModule } from '@angular/common';
 import { HousingService } from '../../services/housing.service';
-import { IProperty } from './IProperty.interface';
+
 import { ActivatedRoute } from '@angular/router';
+import { IProperty } from './IProperty.interface';
+
 
 @Component({
   selector: 'app-property-list',

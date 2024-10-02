@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { IProperty } from '../property-list/IProperty.interface';
 
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { IProperty } from '../property-list/IProperty.interface';
+
 
 @Component({
   selector: 'app-property-card',
@@ -14,4 +15,6 @@ import { CommonModule } from '@angular/common';
 export class PropertyCardComponent {
   @Input()
   Input_Property!: IProperty;
+
+  @Input() hideIcons!: boolean;
 }

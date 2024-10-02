@@ -1,9 +1,13 @@
 export interface IProperty {
-    id: number;
-    sellRent: number;
-    name: string;
-    type: string;
-    price: number;
-    image?: string;
-  }
-  
+  id: number;
+  sellRent: number;
+  name: string;
+  pType: string;
+  fType: string;
+  price: number;
+  BHK: number;
+  builtArea: number;
+  city: string;
+  RTM: number;
+  image?: string;
+}

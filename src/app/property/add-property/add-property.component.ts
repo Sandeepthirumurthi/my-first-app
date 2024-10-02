@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, ViewChild, viewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TabsModule, TabsetComponent } from 'ngx-bootstrap/tabs';
@@ -30,11 +30,16 @@ export class AddPropertyComponent implements OnInit {
   furnishTypes: Array<string> = ['Fully', 'Semi', 'Duplex'];
 
   propertyView: IProperty = {
-    id: null || 0,
-    sellRent: null || 0,
+    id: 0,
+    sellRent: 0,
     name: '',
-    type: '',
-    price: null || 0,
+    pType: '',
+    fType: '',
+    price: 0,
+    BHK: 0,
+    builtArea: 0,
+    city: '',
+    RTM: 0
   };
 
   constructor(private route: Router) {}

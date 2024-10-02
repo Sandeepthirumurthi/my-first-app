@@ -1,13 +1,13 @@
 <div class="row mb-5">
-  <div class="col-8">
+  <div class="col-8 shadow-lg p-0 bg-white">
     <div class="card">
       <div class="card-header">
         <h3>List your Property</h3>
       </div>
       <div class="card-body">
         <form (ngSubmit)="onSubmit(Form)" #Form="ngForm">
-          <div>
-            <tabset #formTabs>
+          <div class="tab-panel">
+            <tabset class="member-tabset" #formTabs>
               <tab heading="Basic Info">
                 <div class="form-group col-12">
                   <p class="mt-2">I want to</p>
@@ -30,13 +30,18 @@
                 </div>
                 <div class="form-group col-12">
                   <p class="mt-2">BHK</p>
-                  <div class="btn-group" btnRadioGroup>
+                  <div
+                    class="btn-group"
+                    btnRadioGroup
+                    [(ngModel)]="propertyView.BHK"
+                    name="BHK"
+                  >
                     <label
                       *ngFor="let bhk of [1, 2, 3, 4]"
                       class="btn btn-outline-primary"
                       [btnRadio]="bhk"
                       role="button"
-                      name="SellRent"
+                      name="BHK"
                       >{{ bhk }}</label
                     >
                   </div>
@@ -46,28 +51,33 @@
                   <div
                     class="btn-group"
                     btnRadioGroup
-                    name="propType"
-                    [(ngModel)]="propertyView.type"
+                    name="pType"
+                    [(ngModel)]="propertyView.pType"
                   >
                     <label
                       *ngFor="let pType of propertyTypes"
                       class="btn btn-outline-primary"
                       [btnRadio]="pType"
                       role="button"
-                      name="SellRent"
+                      name="pType"
                       >{{ pType }}</label
                     >
                   </div>
                 </div>
                 <div class="form-group col-12">
                   <p class="mt-2">Property Type</p>
-                  <div class="btn-group" btnRadioGroup>
+                  <div
+                    class="btn-group"
+                    btnRadioGroup
+                    [(ngModel)]="propertyView.fType"
+                    name="fType"
+                  >
                     <label
                       *ngFor="let fType of furnishTypes"
                       class="btn btn-outline-primary"
                       [btnRadio]="fType"
                       role="button"
-                      name="SellRent"
+                      name="fType"
                       >{{ fType }}</label
                     >
                   </div>
@@ -92,7 +102,12 @@
 
                 <div class="form-group col-12 mt-2">
                   <label>City</label>
-                  <input type="text" class="form-control mt-2" />
+                  <input
+                    type="text"
+                    class="form-control mt-2"
+                    [(ngModel)]="propertyView.city"
+                    name="city"
+                  />
                 </div>
 
                 <div class="form-group col-12 mt-2 me-2">
@@ -129,7 +144,12 @@
 
                 <div class="form-group col-12">
                   <label>Built Area (in Sqr Feet)</label>
-                  <input type="text" class="form-control mt-2" />
+                  <input
+                    type="text"
+                    class="form-control mt-2"
+                    [(ngModel)]="propertyView.builtArea"
+                    name="builtArea"
+                  />
                 </div>
 
                 <div class="form-group col-12 mt-2">
@@ -314,9 +334,9 @@
   <div class="col-4">
     <div class="card-header">
       <h3>Your property preview</h3>
-      <div>
-        <app-property-card [Input_Property]="propertyView"></app-property-card>
-      </div>
+    </div>
+    <div class="shadow-lg p-3 bg-white">
+      <app-property-card [Input_Property]="propertyView" [hideIcons]="true"></app-property-card>
     </div>
   </div>
 </div>
